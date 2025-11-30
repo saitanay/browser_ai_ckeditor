@@ -1,0 +1,22 @@
+# CKEditor 5 Browser AI plugin definitions.
+# Provides AI-powered toolbar buttons using Chrome's built-in AI APIs.
+
+browser_ai_ckeditor_ai:
+  ckeditor5:
+    plugins:
+      - browserAi.BrowserAi
+  drupal:
+    label: Browser AI
+    library: browser_ai_ckeditor/browser_ai
+    admin_library: browser_ai_ckeditor/browser_ai.admin
+    toolbar_items:
+      aiRewrite:
+        label: AI Rewrite
+      aiSummarize:
+        label: AI Summarize
+      aiProofread:
+        label: AI Proofread
+      aiWriteForMe:
+        label: AI Write for Me
+    elements: false
+

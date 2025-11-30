@@ -1,0 +1,16 @@
+# Browser AI CKEditor libraries.
+
+browser_ai:
+  js:
+    js/build/browserAi.js: { minified: true }
+  css:
+    theme:
+      css/browser-ai.admin.css: {}
+  dependencies:
+    - core/ckeditor5
+    - core/drupal
+
+browser_ai.admin:
+  css:
+    theme:
+      css/browser-ai.admin.css: {}

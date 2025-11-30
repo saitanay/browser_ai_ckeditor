@@ -1,0 +1,8 @@
+name: Browser AI CKEditor
+type: module
+description: 'Adds AI-powered toolbar buttons to CKEditor 5 using Chrome built-in AI APIs for rewriting, summarizing, proofreading, and content generation.'
+package: CKEditor 5
+core_version_requirement: ^10.3 || ^11
+dependencies:
+  - drupal:ckeditor5
+

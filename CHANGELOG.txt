@@ -1,0 +1,15 @@
+Browser AI CKEditor
+
+1.0.0, 2024-XX-XX
+------------------
+- Initial release
+- Added AI Rewrite toolbar button for rewriting selected text
+- Added AI Summarize toolbar button for summarizing selected text
+- Added AI Proofread toolbar button for correcting grammar and spelling
+- Added AI Write for Me toolbar button for generating content from prompts
+- Integrated Chrome's built-in AI APIs (Rewriter, Summarizer, Proofreader, Writer)
+- Added support for CKEditor 5 toolbar configuration
+- Added loading states and error handling for AI operations
+- Added form interface for "Write for Me" feature
+- Browser compatibility detection and graceful degradation for unsupported browsers
+

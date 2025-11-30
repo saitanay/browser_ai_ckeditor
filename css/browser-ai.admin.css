@@ -1,0 +1,120 @@
+/**
+ * @file
+ * Admin styles for Browser AI CKEditor toolbar buttons.
+ */
+
+/* Admin toolbar button icons */
+.ckeditor5-toolbar-button-aiRewrite {
+  background-image: url(../icons/rewrite.svg);
+}
+
+.ckeditor5-toolbar-button-aiSummarize {
+  background-image: url(../icons/summarize.svg);
+}
+
+.ckeditor5-toolbar-button-aiProofread {
+  background-image: url(../icons/proofread.svg);
+}
+
+.ckeditor5-toolbar-button-aiWriteForMe {
+  background-image: url(../icons/write.svg);
+}
+
+/* Loading state indicator for toolbar buttons */
+.ck.ck-toolbar .ck-button.ck-browser-ai-loading {
+  position: relative !important;
+  pointer-events: none !important;
+  opacity: 0.7 !important;
+}
+
+.ck.ck-toolbar .ck-button.ck-browser-ai-loading .ck-icon {
+  opacity: 0.3 !important;
+}
+
+.ck.ck-toolbar .ck-button.ck-browser-ai-loading::after {
+  content: '' !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  width: 16px !important;
+  height: 16px !important;
+  margin-top: -8px !important;
+  margin-left: -8px !important;
+  border: 2px solid rgba(0, 0, 0, 0.2) !important;
+  border-top-color: #0066cc !important;
+  border-radius: 50% !important;
+  animation: ck-browser-ai-spin 0.6s linear infinite !important;
+  z-index: 10 !important;
+}
+
+@keyframes ck-browser-ai-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Write for Me form styles */
+.ck.ck-browser-ai-form {
+  padding: 1rem;
+  min-width: 300px;
+}
+
+.ck.ck-browser-ai-form .ck-labeled-field-view {
+  margin-bottom: 1rem;
+}
+
+.ck.ck-browser-ai-form .ck-labeled-field-view__input-wrapper {
+  width: 100%;
+}
+
+.ck.ck-browser-ai-form .ck-input {
+  width: 100%;
+  min-width: 250px;
+}
+
+.ck.ck-browser-ai-form .ck-browser-ai-form__actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+/* Loading state for form submit button */
+.ck.ck-browser-ai-form .ck-button.ck-browser-ai-loading {
+  position: relative !important;
+  pointer-events: none !important;
+}
+
+.ck.ck-browser-ai-form .ck-button.ck-browser-ai-loading .ck-icon {
+  opacity: 0.3 !important;
+}
+
+.ck.ck-browser-ai-form .ck-button.ck-browser-ai-loading::after {
+  content: '' !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  width: 12px !important;
+  height: 12px !important;
+  margin-top: -6px !important;
+  margin-left: -6px !important;
+  border: 2px solid rgba(0, 0, 0, 0.2) !important;
+  border-top-color: #0066cc !important;
+  border-radius: 50% !important;
+  animation: ck-browser-ai-spin 0.6s linear infinite !important;
+  z-index: 10 !important;
+}
+
+/* AI unavailable warning */
+.ck.ck-browser-ai-warning {
+  background-color: #fff3cd;
+  border: 1px solid #ffc107;
+  border-radius: 4px;
+  padding: 0.75rem;
+  margin: 0.5rem;
+  font-size: 0.875rem;
+  color: #856404;
+}

@@ -1,0 +1,48 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the Browser AI CKEditor module.
+ */
+
+/**
+ * Implements hook_uninstall().
+ *
+ * Removes Browser AI toolbar items from all CKEditor 5 editor configurations.
+ */
+function browser_ai_ckeditor_uninstall() {
+  // List of toolbar items provided by this module.
+  $ai_toolbar_items = [
+    'aiRewrite',
+    'aiSummarize',
+    'aiProofread',
+    'aiWriteForMe',
+  ];
+
+  // Get all editor configurations.
+  $editor_ids = \Drupal::entityQuery('editor')
+    ->accessCheck(FALSE)
+    ->execute();
+
+  foreach ($editor_ids as $editor_id) {
+    $config = \Drupal::configFactory()->getEditable('editor.editor.' . $editor_id);
+    $settings = $config->get('settings');
+
+    // Check if this editor has toolbar items configured.
+    if (isset($settings['toolbar']['items']) && is_array($settings['toolbar']['items'])) {
+      // Remove AI toolbar items.
+      $original_items = $settings['toolbar']['items'];
+      $filtered_items = array_values(array_filter($original_items, function ($item) use ($ai_toolbar_items) {
+        return !in_array($item, $ai_toolbar_items, TRUE);
+      }));
+
+      // Only save if items were actually removed.
+      if (count($filtered_items) !== count($original_items)) {
+        $config->set('settings.toolbar.items', $filtered_items);
+        $config->save();
+        \Drupal::logger('browser_ai_ckeditor')->notice('Removed Browser AI toolbar items from editor configuration: @editor', ['@editor' => $editor_id]);
+      }
+    }
+  }
+}
+

@@ -1,0 +1,17 @@
+{
+  "name": "browser_ai_ckeditor",
+  "version": "1.0.0",
+  "description": "Browser AI CKEditor 5 plugin for Drupal",
+  "private": true,
+  "scripts": {
+    "build": "webpack --mode production",
+    "dev": "webpack --mode development",
+    "watch": "webpack --mode development --watch"
+  },
+  "devDependencies": {
+    "ckeditor5": "~43.3.1",
+    "terser-webpack-plugin": "^5.3.9",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
+  }
+}

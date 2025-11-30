@@ -1,0 +1,16 @@
+{
+  "name": "drupal/browser_ai_ckeditor",
+  "description": "Adds AI-powered toolbar buttons to CKEditor 5 using Chrome built-in AI APIs for rewriting, summarizing, proofreading, and content generation.",
+  "type": "drupal-module",
+  "license": "GPL-2.0-or-later",
+  "homepage": "https://www.drupal.org/project/browser_ai_ckeditor",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/browser_ai_ckeditor",
+    "source": "https://git.drupalcode.org/project/browser_ai_ckeditor"
+  },
+  "require": {
+    "drupal/core": "^10.3 || ^11"
+  },
+  "minimum-stability": "dev"
+}
+
