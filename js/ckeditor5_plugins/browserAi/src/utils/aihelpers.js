@@ -84,8 +84,8 @@ export async function proofread(text) {
 
   try {
     const proofreadResult = await proofreader.proofread(text);
-    // Return the corrected text
-    return proofreadResult.correctedInput;
+    // Return the corrected text, or original text if no corrections were made
+    return proofreadResult.correctedInput || text;
   } finally {
     proofreader.destroy();
   }
